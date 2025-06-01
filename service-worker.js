@@ -1,21 +1,13 @@
-self.addEventListener('install', function(e) {
+self.addEventListener("install", e => {
   e.waitUntil(
-    caches.open('meteo-cache').then(function(cache) {
-      return cache.addAll([
-        './',
-        './index.html',
-        './manifest.json',
-        './icon-192.png',
-        './icon-512.png'
-      ]);
+    caches.open("meteo-cache").then(cache => {
+      return cache.addAll(["index.html", "manifest.json", "icon-192.png", "icon-512.png"]);
     })
   );
 });
 
-self.addEventListener('fetch', function(e) {
+self.addEventListener("fetch", e => {
   e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
+    caches.match(e.request).then(response => response || fetch(e.request))
   );
 });
