@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stazione Meteo - IROME8355</title>
+  <meta name="description" content="Dashboard meteo per la stazione IROME8355: dati in tempo reale, previsioni, radar e mappa." />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="manifest" href="manifest.json" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service Worker registrato', reg))
+          .catch(err => console.error('Service Worker errore:', err));
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>Stazione Meteo - IROME8355</h1>
+  <p>Dati e funzionalità offline con supporto PWA attivo.</p>
+</body>
+</html>
